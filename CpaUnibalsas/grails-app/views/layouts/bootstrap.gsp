@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><g:layoutTitle default="${meta(name: 'app.name')}"/></title>
 		<meta name="description" content="">
-		<meta name="author" content="">
+		<meta name="author" content="Sebastian Santos">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,14 +38,20 @@
 						<span class="icon-bar"></span>
 					</a>
 					
-					<a class="brand" href="${createLink(uri: '/')}">Grails Twitter Bootstrap</a>
+					<a class="brand" href="${createLink(uri: '/')}">CPA</a>
 
 					<div class="nav-collapse">
 						<ul class="nav">							
-							<li<%= request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : '' %>><a href="${createLink(uri: '/')}">Home</a></li>
-							<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+							<li class="controller"><g:link controller="Cpa">Cadastrar CPA</g:link></li>
+							<li class="controller"><g:link controller="BlocoQuestao">Cadastrar Bloco de Questão</g:link></li>
+							<li class="controller"><g:link controller="Questao">Cadastrar Questão</g:link></li>
+							
+							
+							
+							
+						<!-- 	<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 								<li<%= c.logicalPropertyName == controllerName ? ' class="active"' : '' %>><g:link controller="${c.logicalPropertyName}">${c.naturalName}</g:link></li>
-							</g:each>
+							</g:each>  -->
 						</ul>
 					</div>
 				</div>
