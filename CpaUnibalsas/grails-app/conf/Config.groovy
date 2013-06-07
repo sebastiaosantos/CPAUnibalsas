@@ -89,3 +89,28 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+grails.resources.mappers.handlebars.templatesRoot = 'js/templates'
+grails.resources.mappers.handlebars.templatesPathSeparator = '.'
+
+jawr {
+	js {
+		// Specific mapping to disable resource handling by plugin.
+		mapping = '/jawr/'
+
+		bundle {
+			lib {
+				// Bundle id is used in views.
+				id = '/i18n/messages.js'
+
+				// Tell which messages need to localized in Javascript.
+				mappings = 'messages:grails-app.i18n.messages'
+			}
+		}
+	}
+	locale {
+		// Define resolver so ?lang= Grails functionality works with controllers.
+		resolver = 'net.jawr.web.resource.bundle.locale.SpringLocaleResolver'
+	}
+}
