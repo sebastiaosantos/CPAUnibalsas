@@ -8,8 +8,11 @@ modules = {
 	}
 	
 	questao{
-		dependsOn 'handlebars, backbone, jquery'
-		resource url: 'js/templates/questao/questao.js', attrs: [type: 'js'], bundle:'bundle_questao'
+		dependsOn 'underscore, backbone, jquery'
+		resource url: 'js/model/QuestaoModel.js', attrs: [type: 'js'], bundle:'bundle_questao'
+		resource url: 'js/view/QuestaoView.js', attrs: [type: 'js'], bundle:'bundle_questao'
+		resource url: 'template/QuestaoTemplate.html', attrs: [type: 'js'], bundle:'bundle_questao'
+		//resource url: 'js/templates/questao/questao.js', attrs: [type: 'js'], bundle:'bundle_questao'
 		
 	}
 }
