@@ -1,0 +1,28 @@
+<plugin name='backbonejs' version='1.0.0' grailsVersion='2.0 &gt; *'>
+  <author>Karol Balejko</author>
+  <authorEmail>kb@groovydev.com</authorEmail>
+  <title>Grails Backbone.js Resources Plugin</title>
+  <description>Provides resources for Backbone.js http://backbonejs.org/</description>
+  <documentation>http://grails.org/plugin/backbonejs</documentation>
+  <type>BackbonejsGrailsPlugin</type>
+  <resources>
+    <resource>BackboneResources</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='http://grails.org/plugins' url='http://grails.org/plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies />
+  <plugins>
+    <compile>
+      <plugin group='org.grails.plugins' name='underscore' version='1.4.4' />
+    </compile>
+    <runtime>
+      <plugin group='org.grails.plugins' name='resources' version='1.2.RC2' />
+    </runtime>
+  </plugins>
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

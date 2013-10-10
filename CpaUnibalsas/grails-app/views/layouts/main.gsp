@@ -69,12 +69,18 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
+    
+    
+    <br>
+    <br>
+    <hr>
 
 		<div class="container-fluid">
 			<g:layoutBody/>
 
 			<hr>
-
+			
+			
 			<footer>
 				<p>&copy; Company 2013</p>
 			</footer>
