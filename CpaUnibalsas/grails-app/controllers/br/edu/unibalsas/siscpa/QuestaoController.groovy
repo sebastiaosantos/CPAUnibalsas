@@ -14,6 +14,12 @@ class QuestaoController {
         params.max = Math.min(max ?: 10, 100)
         respond Questao.list(params), model:[questaoInstanceCount: Questao.count()]
     }
+	
+	def list(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Questao.list(params), model:[questaoInstanceTotal: Questao.count()]
+    }
+	
 
     def show(Questao questaoInstance) {
         respond questaoInstance
