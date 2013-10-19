@@ -1,6 +1,8 @@
 
 
 var QuestaoView = Backbone.View.extend({
+	
+	
 	tagName: 'article',
     className: 'page-questao',
     el: $('.container'),
@@ -30,3 +32,4 @@ var QuestaoView = Backbone.View.extend({
 }
     );
     
+

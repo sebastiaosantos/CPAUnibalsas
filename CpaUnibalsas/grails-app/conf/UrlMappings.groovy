@@ -7,7 +7,6 @@ class UrlMappings {
 		 */
 //		"/"				(view:"/index")
 		"/about"		(view:"/siteinfo/about")
-		"/blog"			(view:"/siteinfo/blog")
 		"/systeminfo"	(view:"/siteinfo/systeminfo")
 		"/contact"		(view:"/siteinfo/contact")
 		"/terms"		(view:"/siteinfo/terms")

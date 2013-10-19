@@ -22,15 +22,41 @@
 						<ul class="dropdown-menu">
 		                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 		                    <li class="controller">
+		                     <g:if test="${c.logicalPropertyName != 'dbdoc' && c.logicalPropertyName !=  '_DemoPage' && c.logicalPropertyName !=  'avaliacaoAluno' 
+		     && c.logicalPropertyName !=  'avaliacaoAlunoPos' && c.logicalPropertyName !=  'avaliacaoComunidadeExterna' && c.logicalPropertyName !=  'avaliacao'
+		     && c.logicalPropertyName !=  'avaliacaoFuncionario' && c.logicalPropertyName !=  'avaliacaoProfessor' && c.logicalPropertyName !=  'avaliador' 
+			   && c.logicalPropertyName !=  'blocoDeQuestoes' && c.logicalPropertyName !=  'codigo' && c.logicalPropertyName !=  'objetoAvaliado' 
+			   && c.logicalPropertyName !=  'resposta' && c.logicalPropertyName !=  'respostaAlunoTurma' && c.logicalPropertyName !=  'secRole' 
+			   && c.logicalPropertyName !=  'secUser' && c.logicalPropertyName !=  'secUserSecRole' && c.logicalPropertyName !=  'seed'
+			   && c.logicalPropertyName !=  'tipoDeQuestao' && c.logicalPropertyName !=  'tipoDeQuestaoCategoria' && c.logicalPropertyName !=  'tipoDeQuestaoOrdinal'
+			   && c.logicalPropertyName !=  'valorResposta' && c.logicalPropertyName !=  'valorRespostaAberta' && c.logicalPropertyName !=  'valorRespostaInteiro'
+			  
+		   }">
 		                    	<g:link controller="${c.logicalPropertyName}">
 									<g:if test="${c.fullName.contains('HomeController')}">
 						    		<i class="icon-home"></i>
 									</g:if>
-									<g:elseif test="${c.fullName.contains('DemoPageController')}">
-						    		<i class="icon-beaker"></i>
+									<g:elseif test="${c.fullName.contains('Curso')}">
+						    		<i class="icon-group"></i>
 									</g:elseif>
-		                    		${c.fullName.substring(c.fullName.lastIndexOf('.')+1)}
+									<g:elseif test="${c.fullName.contains('Departamento')}">
+						    		<i class="icon-lock"></i>
+									</g:elseif>
+									<g:elseif test="${c.fullName.contains('Professor')}">
+						    		<i class="icon-user"></i>
+									</g:elseif>
+									<g:elseif test="${c.fullName.contains('Questao')}">
+						    		<i class="icon-pencil"></i>
+									</g:elseif>
+									<g:elseif test="${c.fullName.contains('Turma')}">
+						    		<i class="icon-plus"></i>
+									</g:elseif>
+									<g:elseif test="${c.fullName.contains('CPA')}">
+						    		<i class="icon-pushpin"></i>
+									</g:elseif>
+		                    		<g:message code="${c.logicalPropertyName}.label" default="${c.logicalPropertyName.capitalize()}"/>
 		                    	</g:link>
+		                    	</g:if>
 		                    </li>
 		                    </g:each>
 						</ul>

@@ -28,11 +28,15 @@
 					All Controller
 				</a>
 				<ul class="dropdown-menu">
-					<li class="controller"><g:link controller="home">HomeController</g:link></li>
+					<li class="controller"><g:link controller="home">Home Controller</g:link></li>
 					<li class="divider"></li>
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.logicalPropertyName } }">
 						<g:if test="${c.logicalPropertyName != 'home'}">
-							<li class="controller"><g:link controller="${c.logicalPropertyName}">${c?.fullName?.substring(c?.fullName?.lastIndexOf('.')+1)}</g:link></li>
+						<g:if test="${ c.logicalPropertyName !=  '_DemoPage'   }">
+
+				<li class="controller"><g:link controller="${c.logicalPropertyName}"><g:message code="${c.logicalPropertyName}.label" default="${c.logicalPropertyName.capitalize()}"/>
+</g:link></li>
+						</g:if>
 						</g:if>
 					</g:each>
 				</ul>

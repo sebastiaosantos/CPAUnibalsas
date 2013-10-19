@@ -23,13 +23,8 @@ var QuestaoFormView = Backbone.View.extend({
         this.model.on("sync", this.goToIndex);
         this.render();
     },
-    template: _.template('<form class="form-inline" role="form"> \
-    		  <div class="form-group"> \
-    		    <label class="sr-only" for="descricao">DescriÃ§Ã£o</label> \
-    		    <input type="text" class="form-control" id="descricao" placeholder="Enter com a descriÃ§Ã£o"> \
-    		  </div> \
-    		  <button type="submit" class="btn btn-default">Adicionar</button> \
-    		</form>'),
+    template: _.template({title: "Nome do Post1", content: "Conteudo do Post"}));
+            this.$el.html(this.template({title: "Nome do Post", content: "Conteúdo do Post"}));
 
     render: function() {
         this.$el.append(this.template(this.model.toJSON()));
@@ -62,3 +57,5 @@ var QuestaoFormView = Backbone.View.extend({
         window.location = '/CpaUnibalsas';
     }
 });
+
+

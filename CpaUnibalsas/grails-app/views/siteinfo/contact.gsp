@@ -9,10 +9,7 @@
 
 	<section id="intro">
 		<p class="lead">
-			For ongoing information about ${meta(name:'app.name')}, please read our company 
-			<a href="http://wordpress.com/signup/">blog</a>. Also, feel free to
-			contact us with service questions, partnership proposals, or media
-			inquiries.
+<%--			A <a href="http://www.unibalsas.edu.br/">Faculdade de Balsas</a> é uma Instituição de Ensino Superior voltada à formação de profissionais aptos a exercer funções relevantes e fundamentais.--%>
 		</p>
 	</section>
 
@@ -21,28 +18,21 @@
 		<div class="span4">
 			<h1><g:message code="default.contact.address"/></h1>
 				<address>
-					<strong>${meta(name:'app.name')}, Inc.</strong><br>
-					 123 Future Ave<br>
-					 San Francisco, CA 94107<br>
+					<strong>Faculdade de Balsas - UNIBALSAS</strong><br>
+					 BR 230 – Km 05<br>
+					 Balsas - MA, CEP: 65800-000<br>
 					 <br>
 				</address>
 				<address>
 					<div class="row">
 						<span class="span1">
-							<strong><abbr title="Phone">Phone</abbr></strong>
+							<strong><abbr title="Phone">Fone</abbr></strong>
 						</span>
 						<span class="span3">
-							(123) 456-7890
+							(99) 3542-5500
 						</span>
 					</div>
-					<div class="row">
-						<span class="span1">
-							<strong><abbr title="Fax">Fax</abbr></strong>
-						</span>
-						<span class="span3">
-					    +49 (0) 72 27 - 95 35 - 605
-						</span>
-					</div>
+					
 				</address>
 				<address>
 					<div class="row">
@@ -50,7 +40,7 @@
 							<strong>Email</strong>
 						</span>
 						<span class="span3">
-					    	<a href="mailto:info@${meta(name:'app.name')}.com">info@${meta(name:'app.name')}.com</a>
+					    	<a href="mailto:info@${meta(name:'app.name')}.com">ouvidoria@unibalsas.edu.br</a>
 						</span>
 					</div>
 				</address>
@@ -58,7 +48,7 @@
 			
 			<div class="span8">
 				<iframe width="100%" scrolling="no" height="300" frameborder="0" 
-					src="http://maps.google.ca/maps?f=q&source=s_q&hl=en&geocode=&q=123+Future+Ave,San+Francisco,+CA+94107&ie=UTF8&hq=&hnear=Downtown,San+Francisco,+CA+94107&z=12&iwloc=near&output=embed"
+					src="https://maps.google.com.br/maps?q=Unibalsas+-+Faculdade+de+Balsas,+Balsas+-+Maranh%C3%A3o&hl=pt-BR&ie=UTF8&ll=-7.522469,-46.052628&spn=0.030505,0.052314&oq=Unibalsas+&t=h&hq=Unibalsas+-+Faculdade+de&hnear=Balsas+Airport+(BSS)&z=15&lci=com.panoramio.all"
 		 			marginwidth="0" marginheight="0"></iframe>
 			</div>
 		</div>
