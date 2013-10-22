@@ -7,3 +7,9 @@ if (typeof jQuery !== 'undefined') {
 		});
 	})(jQuery);
 }
+
+
+_.templateSettings = {
+	    interpolate : /\{\{(.+?)\}\}/g,
+	    evaluate : /\{!(.+?)!\}/g
+};

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -45,31 +46,43 @@ function init() {
 <%--		class="btn btn-primary dropdown-toggle">Botão</button>--%>
 
 
- 
 
 
 
 
 
+         <div id="todoapp">
 
-
-
-
- <g:form action="save" method="post" >
-                <div class="dialog">
+    <header>
+    <div class="dialog">
                     <table>
                         <tbody>
                         <tr class="prop">
                                 <td valign="top" class="name">
+                 
                                     <label for="name">Título da pergunta</label>
+                                    
                                 </td>
                                 <td valign="top">
-                                      <g:textField name="name"  placeholder="Pergunta sem título"  >  </g:textField>
+                                     <g:textField name="name" id="name" placeholder="Pergunta sem título"  >  </g:textField>
+                                   <br>
+                                    <g:select name="select" id="tipoQuestao" from="${[' ', 'Múltipla escolha', 'Texto', 'Caixa de seleção']}" />
+                                   <br>
+                                    
+                                    <tr class="prop">
+                                <td valign="top" class="name">
+                 
+ 											<label for="resp">Título da resposta</label>                                    
+                                </td>
+                                <td valign="top">
+                               
+                                     <div id="multiplaEscolha" class=".hidden-print">
+                                     <g:textField name="resp" id="new-todo" placeholder="Resposta sem título"  >  </g:textField>
                                       <br>
-                                     <g:select name="selct" from="${['Múltipla escolha', 'Texto', 'Caixa de seleção']}" />
+                                    
                                       	<div id="conteudo"></div>
                                       
-                             
+                             		</div>
                              
                                 </td>           
                             </tr> 
@@ -78,25 +91,13 @@ function init() {
                         </tbody>
                     </table>
                 </div>
-                <div class="buttons">
-               <g:submitButton name="create" class="btn btn-default" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-               
-                </div>
-                
-                
-                
-            </g:form>
-            
-         <div id="todoapp">
-
-    <header>
-      <h1>Todos</h1>
-      <input id="new-todo" type="text" placeholder="What needs to be done?">
+        
+  
     </header>
 
     <section id="main" style="display: none;">
       <input id="toggle-all" type="checkbox">
-      <label for="toggle-all">Mark all as complete</label>
+      <label for="toggle-all">Selecionar todos</label>
       <ul id="todo-list"></ul>
     </section>
 
@@ -106,8 +107,49 @@ function init() {
   </footer>
 
   </div>
+  
+  
+  
+  <%--<select id="my_select" name="my_select_box">
 
+<option value="yes">yes</option>
 
+<option value="no">no</option>
+
+</select>
+  
+  
+  <script>
+  $('#my_select').change(function() {
+
+   // assign the value to a variable, so you can test to see if it is working
+
+    var selectVal = $('#my_select :selected').val();
+
+    alert(selectVal);
+
+});
+ </script>  --%>
+  
+  
+  
+
+<script type="text/template" id="item-template">
+
+ <div class="view">
+      <input class="toggle" type="checkbox" {{ done ? 'checked="checked"' : '' }} />
+      <label>{{ title }}</label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="{{ title }}" />
+  </script>
+  
+  <script type="text/template" id="stats-template">
+    {! if (done) { !}
+      <a id="clear-completed">Clear {{ done }} completed {{ done == 1 ? 'item' : 'items' }}</a>
+    {! } !}
+    <div class="todo-count"><b>{{ remaining }}</b> {{ remaining == 1 ? 'item' : 'items' }} left</div>
+  </script>
 
 </body>
 

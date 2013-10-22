@@ -18,12 +18,12 @@ _.templateSettings = {
 
 
 
-		 template: _.template('<form class="form-inline" role="form"> 
-    		  <div class="form-group"> 
-    		    <label class="sr-only" for="descricao">Descrição</label> 
-    		    <input type="text" class="form-control" id="descricao" placeholder="Enter com a descrição"> 
-    		  </div> 
-    		  <button type="submit" class="btn btn-default">Adicionar</button> 
+		 template: _.template('<form class="form-inline" role="form"> \
+    		  <div class="form-group"> \
+    		    <label class="sr-only" for="descricao">Descrição</label> \
+    		    <input type="text" class="form-control" id="descricao" placeholder="Enter com a descrição"> \
+    		  </div> \
+    		  <button type="submit" class="btn btn-default">Adicionar</button> \
     		</form> '),
 		    
 		    
@@ -73,7 +73,7 @@ _.templateSettings = {
                      this.descricaoInput = this.$el.find('#descricao');
 		        		 
 				 
-}
+},
 
 			
 			
