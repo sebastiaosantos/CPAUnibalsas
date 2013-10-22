@@ -17,7 +17,10 @@
 } 
 
 #name {
- size: 300px;
+ size: 450px;
+ padding: 5px 18px;
+   text-align: left;
+ 
 }
 
 </style>
@@ -58,23 +61,53 @@ function init() {
                         <tbody>
                         <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="name">Name:</label>
+                                    <label for="name">Título da pergunta</label>
                                 </td>
                                 <td valign="top">
-                                      <g:textField name="name"  placeholder="Digite sua pergunta"  >  </g:textField>
-                                </td>
+                                      <g:textField name="name"  placeholder="Pergunta sem título"  >  </g:textField>
+                                      <br>
+                                     <g:select name="selct" from="${['Múltipla escolha', 'Texto', 'Caixa de seleção']}" />
+                                      	<div id="conteudo"></div>
+                                      
+                             
+                             
+                                </td>           
                             </tr> 
+                           
                       
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+               <g:submitButton name="create" class="btn btn-default" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+               
                 </div>
+                
+                
+                
             </g:form>
+            
+         <div id="todoapp">
+
+    <header>
+      <h1>Todos</h1>
+      <input id="new-todo" type="text" placeholder="What needs to be done?">
+    </header>
+
+    <section id="main" style="display: none;">
+      <input id="toggle-all" type="checkbox">
+      <label for="toggle-all">Mark all as complete</label>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <footer style="display: none;">
+    
+    <div class="todo-count"><b>1</b> item left</div>
+  </footer>
+
+  </div>
 
 
-	<div id="conteudo"></div>
 
 </body>
 
