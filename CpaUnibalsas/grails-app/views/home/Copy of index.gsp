@@ -1,96 +1,161 @@
+
+<!DOCTYPE html>
+
 <html>
 
 <head>
 <title><g:message code="default.welcome.title"
 		args="[meta(name:'app.name')]" /></title>
 
-<r:require modules="backbone" />
+<r:require modules="questao" />
+
+
+<style type="text/css">
+
+
+#name {
+ size: 450px;
+ padding: 5px 18px;
+   text-align: left;
+ 
+ }
+ 
+ #new-todo{
+ 
+  
+  size: 450px;
+ padding: 5px 18px;
+   text-align: left;
+ 
+ }
+}
+
+</style>
 
 <meta name="layout" content="kickstart" />
 <script>
 
-<%--
-            $("#teste").click(function() {
-                //alert("Teste");
-                console.log("teste");
-                var HelloView = Backbone.View.extend({
-                    el: $('#conteudo'),
-                    initialize: function() {
-                        this.render();
-                    },
-                    render: function() {
-                    	this.$el.html("<h1>Hello World</h1>");
-                    }
-                });
-                var helloView = new HelloView();
-                
-            });
-            
-           --%>
-            
-	function init() {
-		var HelloView = Backbone.View.extend({
-			tagName : 'article',
-			className : 'page-posts',
-
-			template: _.template("<h2><%= title %></h2><p><%= content %></p>"),
-
-		 template: _.template('<button type="button" class="btn btn-primary" href="#conteudo" id="add-button">Add Post</button><h2> {{ title }}</h2><p> {{ content }} </p><h3>Comments</h3><label>Username: <input id="username" type="text" /></label>'),
-		    events: {
-		        "dblclick" : "fullScreen",
-		        "click #add-button" : "newPost",
-		        "blur #username" : "searchUsername"
-		    },
-		 
-		    newPost: function() {
-		        window.alert("Adicionar novo post");
-		    },
-		 
-		    searchUsername: function(e) {
-		        window.alert("Searching username " + e.target.value);
-		    },
-		 
-		    fullScreen: function() {
-		        window.alert("Post full screen");
-		    },
-		
-
-	    
-			el : $('#conteudo'),
-			initialize : function() {
-				this.render();
-			},
-			render : function() {
-				this.$el.html("<h1>Hello World</h1>");
-				    var htmlGenerated = "<h2>Nome do Post</h2>";
-				    htmlGenerated += "<p>Conteudo do post</p>";
-				    this.$el.html(htmlGenerated);
-			        this.$el.html(this.template({title: "Nome do Post1", content: "Conteudo do Post"}));
-        this.$el.html(this.template({title: "Nome do Post", content: "Conteúdo do Post"}));
-
-				    
-				
-			}
-
-			
-		});
-		
-		
-		 
-		var helloView = new HelloView();
+function init() {
+	 
+	var helloView = new HelloView();
 		
 		console.log(helloView.el);
-	}
+}
 </script>
+
+
 </head>
 
 <body>
 
-	<button id="teste" type="button" onclick="init()"
-		class="btn btn-primary dropdown-toggle">Botão</button>
+<%--	<button id="teste" type="button" onclick="init()"--%>
+<%--		class="btn btn-primary dropdown-toggle">Botão</button>--%>
 
-	<div id="conteudo"></div>
 
+
+
+
+
+
+         <div id="todoapp">
+
+    <header>
+    <div class="dialog">
+                    <table>
+                        <tbody>
+                        <tr class="prop">
+                                <td valign="top" class="name">
+                 
+                                    <label for="name">Título da pergunta</label>
+                                    
+                                </td>
+                                <td valign="top">
+                                     <g:textField name="name" id="name" placeholder="Pergunta sem título"  >  </g:textField>
+                                   <br>
+                                    <g:select name="select" id="tipoQuestao" from="${[' ', 'Múltipla escolha', 'Texto', 'Caixa de seleção']}" />
+                                   <br>
+                                    
+                                    <tr class="prop">
+                                <td valign="top" class="name">
+                 
+ 											<label for="resp">Título da resposta</label>                                    
+                                </td>
+                                <td valign="top">
+                               
+                                     <div id="multiplaEscolha" class=".hidden-print">
+                                     <g:textField name="resp" id="new-todo" placeholder="Resposta sem título"  >  </g:textField>
+                                      <br>
+                                    
+                                      	<div id="conteudo"></div>
+                                      
+                             		</div>
+                             
+                                </td>           
+                            </tr> 
+                           
+                      
+                        </tbody>
+                    </table>
+                </div>
+        
+  
+    </header>
+
+    <section id="main" style="display: none;">
+      <input id="toggle-all" type="checkbox">
+      <label for="toggle-all">Selecionar todos</label>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <footer style="display: none;">
+    
+    <div class="todo-count"><b>1</b> item left</div>
+  </footer>
+
+  </div>
+  
+  
+  
+  <%--<select id="my_select" name="my_select_box">
+
+<option value="yes">yes</option>
+
+<option value="no">no</option>
+
+</select>
+  
+  
+  <script>
+  $('#my_select').change(function() {
+
+   // assign the value to a variable, so you can test to see if it is working
+
+    var selectVal = $('#my_select :selected').val();
+
+    alert(selectVal);
+
+});
+ </script>  --%>
+  
+  
+  
+
+<script type="text/template" id="item-template">
+
+ <div class="view">
+      <input class="toggle" type="checkbox" {{ done ? 'checked="checked"' : '' }} />
+      <label>{{ title }}</label>
+      <a class="destroy"></a>
+    </div>
+   <input class="edit" type="text" value="{{ title }}" />
+  </script>
+  
+  <script type="text/template" id="stats-template">
+    {! if (done) { !}
+      <a id="clear-completed">Clear {{ done }} completed {{ done == 1 ? 'item' : 'items' }}</a>
+    {! } !}
+    <div class="todo-count"><b>{{ remaining }}</b> {{ remaining == 1 ? 'item' : 'items' }} left</div>
+  </script>
 
 </body>
 

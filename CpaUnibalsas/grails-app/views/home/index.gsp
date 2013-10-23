@@ -10,17 +10,31 @@
 <r:require modules="questao" />
 
 
+
 <style type="text/css">
 
-#feedback {
-  height: 80px;
-  width: 160px;
-} 
 
 #name {
  size: 450px;
  padding: 5px 18px;
    text-align: left;
+ 
+ }
+ 
+ #new-todo{
+ 
+  
+  size: 450px;
+ padding: 5px 18px;
+   text-align: left;
+ 
+ }
+ 
+ .test{
+ 
+ padding: 6px 5px;
+ }
+ 
  
 }
 
@@ -92,13 +106,27 @@ function init() {
                     </table>
                 </div>
         
-  
+        
+        
+        
     </header>
 
     <section id="main" style="display: none;">
-      <input id="toggle-all" type="checkbox">
+     <table>
+                       
+                        <tr>
+                              <td class="test">
+      <input name="toggle-all" id="toggle-all" type="checkbox">
+							  </td>
+                              <td>
       <label for="toggle-all">Selecionar todos</label>
+							
+                               </td>           
+                         </tr>    
+                       
+       </table>
       <ul id="todo-list"></ul>
+      
     </section>
 
     <footer style="display: none;">
@@ -108,6 +136,17 @@ function init() {
 
   </div>
   
+  
+  
+             
+             <div class="panel panel-primary">
+  <div class="panel-body">
+   
+   <h1>teste </h1>
+   
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>      
   
   
   <%--<select id="my_select" name="my_select_box">
@@ -137,16 +176,26 @@ function init() {
 <script type="text/template" id="item-template">
 
  <div class="view">
-      <input class="toggle" type="checkbox" {{ done ? 'checked="checked"' : '' }} />
-      <label>{{ title }}</label>
+       <table>
+                       
+                        <tr>
+                              <td class="test">
+ 							 <input name="test" class="toggle" type="checkbox" {{ done ? 'checked="checked"' : '' }} />
+							  </td>
+                              <td>
+ 								<label  for="test">{{ title }} </label>  
+								<br>
+                               </td>           
+                         </tr>    
+                       
+       </table>
       <a class="destroy"></a>
     </div>
-    <input class="edit" type="text" value="{{ title }}" />
   </script>
   
   <script type="text/template" id="stats-template">
     {! if (done) { !}
-      <a id="clear-completed">Clear {{ done }} completed {{ done == 1 ? 'item' : 'items' }}</a>
+      <a id="clear-completed">Remover {{ done }}  {{ done == 1 ? 'item' : 'items' }}</a>
     {! } !}
     <div class="todo-count"><b>{{ remaining }}</b> {{ remaining == 1 ? 'item' : 'items' }} left</div>
   </script>
