@@ -3,5 +3,7 @@ var QuestaoModel = Backbone.Model.extend({
     defaults: {
         descricao: ''
     }
+    
 });
+
 

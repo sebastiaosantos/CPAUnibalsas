@@ -18,5 +18,12 @@ class BlocoDeQuestoes implements Serializable{
 		
 		SortedSet questoes
 		
+		@Override
+		public String toString() {
+		// TODO Auto-generated method stub
+		return(descricao);
+		}
+		
 	}
+
 	

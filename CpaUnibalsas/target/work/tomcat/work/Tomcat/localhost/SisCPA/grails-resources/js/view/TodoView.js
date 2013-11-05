@@ -7,13 +7,16 @@
     // Cache the template function for a single item.
     template: _.template($('#item-template').html()),
 
+
+
     // The DOM events specific to an item.
     events: {
       "click .toggle"   : "toggleDone",
       "dblclick .view"  : "edit",
       "click a.destroy" : "clear",
       "keypress .edit"  : "updateOnEnter",
-      "blur .edit"      : "close"
+      "blur .edit"      : "close",
+       
     },
 
     // The TodoView listens for changes to its model, re-rendering. Since there's
@@ -63,5 +66,8 @@
     clear: function() {
       this.model.destroy();
     }
+   
+  
+    
 
   });

@@ -1,5 +1,4 @@
 
-<%@ page import="br.edu.unibalsas.siscpa.Professor" %>
 <!DOCTYPE html>
 <html>
 	<head>

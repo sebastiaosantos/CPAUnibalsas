@@ -8,4 +8,10 @@ class TipoDeQuestao implements Serializable {
 	}
 	
 	String descricao
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return(descricao);
+	}
 }

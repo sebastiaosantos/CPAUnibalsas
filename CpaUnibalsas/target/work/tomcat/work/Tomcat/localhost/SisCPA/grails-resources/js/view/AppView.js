@@ -11,6 +11,7 @@
     // Our template for the line of statistics at the bottom of the app.
     statsTemplate: _.template($('#stats-template').html()),
 
+
     // Delegated events for creating new items, and clearing completed ones.
     events: {
       "keypress #new-todo":  "createOnEnter",
@@ -82,7 +83,8 @@
       _.invoke(Todos.done(), 'destroy');
       return false;
     },
-
+    
+   
     toggleAllComplete: function () {
       var done = this.allCheckbox.checked;
       Todos.each(function (todo) { todo.save({'done': done}); });

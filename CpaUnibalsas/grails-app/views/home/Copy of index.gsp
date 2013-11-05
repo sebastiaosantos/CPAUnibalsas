@@ -10,27 +10,6 @@
 <r:require modules="questao" />
 
 
-<style type="text/css">
-
-
-#name {
- size: 450px;
- padding: 5px 18px;
-   text-align: left;
- 
- }
- 
- #new-todo{
- 
-  
-  size: 450px;
- padding: 5px 18px;
-   text-align: left;
- 
- }
-}
-
-</style>
 
 <meta name="layout" content="kickstart" />
 <script>
@@ -48,8 +27,8 @@ function init() {
 
 <body>
 
-<%--	<button id="teste" type="button" onclick="init()"--%>
-<%--		class="btn btn-primary dropdown-toggle">Botão</button>--%>
+	<%--	<button id="teste" type="button" onclick="init()"--%>
+	<%--		class="btn btn-primary dropdown-toggle">Botão</button>--%>
 
 
 
@@ -57,106 +36,219 @@ function init() {
 
 
 
-         <div id="todoapp">
+	<div id="todoapp">
 
-    <header>
-    <div class="dialog">
-                    <table>
-                        <tbody>
-                        <tr class="prop">
-                                <td valign="top" class="name">
-                 
-                                    <label for="name">Título da pergunta</label>
-                                    
-                                </td>
-                                <td valign="top">
-                                     <g:textField name="name" id="name" placeholder="Pergunta sem título"  >  </g:textField>
-                                   <br>
-                                    <g:select name="select" id="tipoQuestao" from="${[' ', 'Múltipla escolha', 'Texto', 'Caixa de seleção']}" />
-                                   <br>
-                                    
-                                    <tr class="prop">
-                                <td valign="top" class="name">
-                 
- 											<label for="resp">Título da resposta</label>                                    
-                                </td>
-                                <td valign="top">
-                               
-                                     <div id="multiplaEscolha" class=".hidden-print">
-                                     <g:textField name="resp" id="new-todo" placeholder="Resposta sem título"  >  </g:textField>
-                                      <br>
-                                    
-                                      	<div id="conteudo"></div>
-                                      
-                             		</div>
-                             
-                                </td>           
-                            </tr> 
-                           
-                      
-                        </tbody>
-                    </table>
-                </div>
-        
-  
-    </header>
+		<header>
+			<div class="dialog">
+				<table>
+					<tbody>
+						<tr class="">
+							<td valign="top" class="name">
+							<label for="name"><h4>Título da pergunta</h4></label>
+							</td>
+							<td class="col-lg-6">
+							<g:textField name="name" id="name"	placeholder="Pergunta sem título">
+							
+								</g:textField> 
+								<br>
+								</td>
+								</tr> 
+								
+								
+								<tr>
+								<td valign="top" name="select">
+							   <label for="select"> <h4>Tipo da questão </h4></label>
+						    	</td>
+						    	<td class="col-lg-6">
+								<g:select  name="select" id="tipoQuestao"
+									from="${['' ,'Múltipla escolha', 'Texto', 'Caixa de seleção']}" />
+									</td>
+								
+			</tr>
+					</tbody>
+				</table>
+			</div>
 
-    <section id="main" style="display: none;">
-      <input id="toggle-all" type="checkbox">
-      <label for="toggle-all">Selecionar todos</label>
-      <ul id="todo-list"></ul>
-    </section>
 
-    <footer style="display: none;">
-    
-    <div class="todo-count"><b>1</b> item left</div>
-  </footer>
+			<div id="templatesQuestao">
+				<div id="questaoTexto" class="hidden">
+					<table>
+						<tbody>
+							<tr>
+								<td valign="top" class="name">
+								<label for="text"><h4>Título da resposta</h4></label>
+								</td>
+								<td class="col-lg-6">
 
-  </div>
-  
-  
-  
-  <%--<select id="my_select" name="my_select_box">
+									<div id="texto">
+									
+   											 <div class="input-group">
+										<g:textField name="text" id="text" placeholder="Resposta de texto sem título">
+										</g:textField>
+										<br>
+										
+										</div>
+									</div>
 
-<option value="yes">yes</option>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 
-<option value="no">no</option>
+				<div id="questaoCaixaDeSelecao" class="hidden">
+					<table>
+						<tbody>
+							<tr>
+								<td valign="top" class="name">
+								<label for="resp"><h4>Título da resposta</h4></label>
+								</td>
+								<td class="col-lg-6">
 
-</select>
-  
-  
-  <script>
-  $('#my_select').change(function() {
+									<div id="caixaDeSelecao">
+									 
+   											 <div class="input-group">
+     										 <span class="input-group-addon">
+     											 <input type="checkbox">
+     										 </span>
+										<g:textField class="form-control" name="resp" id="new-todo"  placeholder="Resposta  sem título">
+										</g:textField>
+										  </div>
+									
+										<br>
 
-   // assign the value to a variable, so you can test to see if it is working
+									</div>
 
-    var selectVal = $('#my_select :selected').val();
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 
-    alert(selectVal);
+				<div id="questaoMultiplaEscolha" class="hidden">
+					<table>
+						<tbody>
+							<tr>
+								<td valign="top" class="name">
+								<label for="resp"><h4>Título da resposta</h4></label>
+								</td>
+								<td class="col-lg-6">
+									<div id="multiplaEscolha">
+	
+   											 <div class="input-group">
+     										 <span class="input-group-addon">
+     											 <input type="radio">
+     										 </span>
+										<g:textField  class="form-control" name="resp" id="new-todo" placeholder="Resposta  sem título">
+										</g:textField>
+										<br>
+									 </div> </div>
+									
 
-});
- </script>  --%>
-  
-  
-  
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 
-<script type="text/template" id="item-template">
+			</div>
+
+
+		</header>
+
+		<section id="main" style="display: none;">
+			<table>
+
+				<tr>
+					<td class="test"><input name="toggle-all" id="toggle-all"
+						type="checkbox"></td>
+					<td><label for="toggle-all">Selecionar todos</label></td>
+				</tr>
+
+			</table>
+			<ul id="todo-list"></ul>
+
+		</section>
+
+		<footer style="display: none;">
+
+			<div class="todo-count">
+				<b>1</b> item left
+			</div>
+		</footer>
+
+	</div>
+
+
+
+
+
+	<script type="text/template" id="item-template">
 
  <div class="view">
-      <input class="toggle" type="checkbox" {{ done ? 'checked="checked"' : '' }} />
-      <label>{{ title }}</label>
+       <table>
+
+                        <tr>
+                              <td class="test">
+	                 <span class="input-group-addon">
+
+ 							 <input name="test" class="toggle"  type="checkbox" {{ done ? 'checked="checked"' : '' }} />
+</span>
+							  </td>
+                              <td>
+ 								<label  for="test">{{ title }} </label>  
+								<br>
+                               </td>           
+                         </tr>    
+                       
+       </table>
       <a class="destroy"></a>
     </div>
-   <input class="edit" type="text" value="{{ title }}" />
   </script>
   
-  <script type="text/template" id="stats-template">
+  
+  
+
+	<script type="text/template" id="stats-template">
     {! if (done) { !}
-      <a id="clear-completed">Clear {{ done }} completed {{ done == 1 ? 'item' : 'items' }}</a>
+      <a id="clear-completed">Remover {{ done }}  {{ done == 1 ? 'item' : 'items' }}</a>
     {! } !}
     <div class="todo-count"><b>{{ remaining }}</b> {{ remaining == 1 ? 'item' : 'items' }} left</div>
   </script>
+  
 
+
+<script type="text/javascript">
+                                  
+                                    $('#tipoQuestao').change(function() {
+                                    	
+                                    	
+                                    	    var selectVal = $('#tipoQuestao :selected').val();
+
+                                    	    if ( selectVal==("Texto") ){
+                                        	    $("#questaoTexto").removeClass( "hidden");
+                                        	    $("#questaoCaixaDeSelecao").addClass( "hidden");
+                                        	    $("#questaoMultiplaEscolha").addClass( "hidden");
+                                        	}
+
+                                    	    if ( selectVal==("Múltipla escolha") ){
+                                        	    $("#questaoMultiplaEscolha").removeClass( "hidden");
+                                        	    $("#questaoCaixaDeSelecao").addClass( "hidden");
+                                        	    $("#questaoTexto").addClass( "hidden");
+                                        	  
+
+                                        	}
+                                    	    if ( selectVal==("Caixa de seleção") ){
+                                        	    $("#questaoCaixaDeSelecao").removeClass( "hidden");
+                                        	    $("#questaoTexto").addClass( "hidden");
+                                        	    $("#questaoMultiplaEscolha").addClass( "hidden");
+                                        	}
+                                    	//   alert(selectVal); 
+                                    	
+                                    	});
+                                    	                                    
+                                    </script>
 </body>
+
 
 </html>

@@ -71,7 +71,7 @@ grails.project.dependency.resolution = {
 		
 		
 		runtime ":hibernate4:4.1.11.1"
-		//compile ":twitter-bootstrap:3.0.0"
+		compile ":twitter-bootstrap:3.0.0"
 		compile ":backbonejs:1.0.0"
 		compile ":kickstart-with-bootstrap:0.9.6"
 		

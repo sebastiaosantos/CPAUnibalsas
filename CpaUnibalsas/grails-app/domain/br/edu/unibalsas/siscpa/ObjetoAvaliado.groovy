@@ -12,5 +12,11 @@ class ObjetoAvaliado implements Serializable{
 		//BlocoDeQuestoes blocoDeQuestoes
 		
 		String nome
+		
+		@Override
+		public String toString() {
+		// TODO Auto-generated method stub
+		return(nome);
+		}
 	}
 	

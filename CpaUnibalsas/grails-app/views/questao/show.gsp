@@ -21,9 +21,22 @@
 					<span id="descricao-label" class="name"><g:message code="questao.descricao.label" default="Descricao" /></span>
 					
 						<span class="value" aria-labelledby="descricao-label"><g:fieldValue bean="${questaoInstance}" field="descricao"/></span>
+						
+						<span id="ordem-label" class="name"><g:message code="questao.ordem.label" default="Ordem" /></span>
+					
+						<span class="value" aria-labelledby="ordem-label"><g:fieldValue bean="${questaoInstance}" field="ordem"/></span>
+						
+						<span id="blocoDeQuestoes-label" class="name"><g:message code="questao.blocoDeQuestoes.label" default="Bloco de Questões" /></span>
+					
+						<span class="value" aria-labelledby="blocoDeQuestoes-label"><g:fieldValue bean="${questaoInstance}" field="blocoDeQuestoes"/></span>
+						
+						<span id="tipo-label" class="name"><g:message code="questao.tipo.label" default="Tipo de Questões" /></span>
+					
+						<span class="value" aria-labelledby="tipo-label"><g:fieldValue bean="${questaoInstance}" field="tipo"/></span>
 					
 				</li>
 				</g:if>
+				
 			
 			</ol>
 			<g:form url="[resource:questaoInstance, action:'delete']" method="DELETE">

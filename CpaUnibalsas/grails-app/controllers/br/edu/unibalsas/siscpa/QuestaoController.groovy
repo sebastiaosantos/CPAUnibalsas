@@ -31,7 +31,9 @@ class QuestaoController {
 
     @Transactional
     def save(Questao questaoInstance) {
-        if (questaoInstance == null) {
+		println params
+        println questaoInstance?.descricao
+		if (questaoInstance == null) {
             notFound()
             return
         }
@@ -43,6 +45,7 @@ class QuestaoController {
 
         questaoInstance.save flush:true
 
+		
         request.withFormat {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'questaoInstance.label', default: 'Questao'), questaoInstance.id])
