@@ -14,6 +14,12 @@ class ValorRespostaAbertaController {
         params.max = Math.min(max ?: 10, 100)
         respond ValorRespostaAberta.list(params), model:[valorRespostaAbertaInstanceCount: ValorRespostaAberta.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond ValorRespostaAberta.list(params), model:[valorRespostaAbertaInstanceCount: ValorRespostaAberta.count()]
+	}
+	
 
     def show(ValorRespostaAberta valorRespostaAbertaInstance) {
         respond valorRespostaAbertaInstance

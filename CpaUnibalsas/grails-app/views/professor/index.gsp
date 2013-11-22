@@ -1,4 +1,5 @@
 
+<%@ page import="br.edu.unibalsas.siscpa.Professor" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,27 +14,35 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="nome" title="${message(code: 'professor.nome.label', default: 'Nome')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${professorInstanceList}" status="i" var="professorInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${professorInstance.id}">${fieldValue(bean: professorInstance, field: "nome")}</g:link></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-professor" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+				<g:sortableColumn property="nome" title="${message(code: 'professor.nome.label', default: 'Nome')}" />
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${professorInstanceList}" status="i" var="professorInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+				<td><g:link action="show" id="${professorInstance.id}">${fieldValue(bean: professorInstance, field: "nome")}</g:link></td>
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${professorInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

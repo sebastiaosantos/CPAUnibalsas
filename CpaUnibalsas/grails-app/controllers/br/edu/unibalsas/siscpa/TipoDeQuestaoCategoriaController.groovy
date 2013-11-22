@@ -14,6 +14,12 @@ class TipoDeQuestaoCategoriaController {
         params.max = Math.min(max ?: 10, 100)
         respond TipoDeQuestaoCategoria.list(params), model:[tipoDeQuestaoCategoriaInstanceCount: TipoDeQuestaoCategoria.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond TipoDeQuestaoCategoria.list(params), model:[tipoDeQuestaoCategoriaInstanceCount: TipoDeQuestaoCategoria.count()]
+	}
+	
 
     def show(TipoDeQuestaoCategoria tipoDeQuestaoCategoriaInstance) {
         respond tipoDeQuestaoCategoriaInstance

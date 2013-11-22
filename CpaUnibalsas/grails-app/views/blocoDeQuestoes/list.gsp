@@ -11,7 +11,7 @@
 		
 <section id="list-blocoDeQuestoes" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -20,6 +20,10 @@
 				<th><g:message code="blocoDeQuestoes.objetoAvaliado.label" default="Objeto Avaliado" /></th>
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${blocoDeQuestoesInstanceList}" status="i" var="blocoDeQuestoesInstance">
@@ -30,11 +34,12 @@
 				<td>${fieldValue(bean: blocoDeQuestoesInstance, field: "objetoAvaliado")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${blocoDeQuestoesInstanceTotal}" />
+		<bs:paginate total="${blocoDeQuestoesInstanceCount}" />
 	</div>
 </section>
 

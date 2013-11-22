@@ -11,7 +11,7 @@
 		
 <section id="list-avaliacao" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -20,6 +20,10 @@
 				<g:sortableColumn property="tempo" title="${message(code: 'avaliacao.tempo.label', default: 'Tempo')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${avaliacaoInstanceList}" status="i" var="avaliacaoInstance">
@@ -30,11 +34,12 @@
 				<td>${fieldValue(bean: avaliacaoInstance, field: "tempo")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${avaliacaoInstanceTotal}" />
+		<bs:paginate total="${avaliacaoInstanceCount}" />
 	</div>
 </section>
 

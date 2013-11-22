@@ -14,49 +14,66 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="table respostaAlunoTurma">
 			
+				
+			<div class="row">
+				<div class="col-xs-6 col-md-6">
+
 				<g:if test="${respostaAlunoTurmaInstance?.avaliacao}">
-				<li class="prop">
-					<span id="avaliacao-label" class="name"><g:message code="respostaAlunoTurma.avaliacao.label" default="Avaliacao" /></span>
+
+					  <h4> <span id="avaliacao-label" class="name"><g:message code="respostaAlunoTurma.avaliacao.label" default="Avaliacao" /></span>
 					
-						<span class="value" aria-labelledby="avaliacao-label"><g:link controller="avaliacao" action="show" id="${respostaAlunoTurmaInstance?.avaliacao?.id}">${respostaAlunoTurmaInstance?.avaliacao?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="avaliacao-label"><g:fieldValue bean="${respostaAlunoTurmaInstance}" field="avaliacao"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${respostaAlunoTurmaInstance?.questao}">
-				<li class="prop">
-					<span id="questao-label" class="name"><g:message code="respostaAlunoTurma.questao.label" default="Questao" /></span>
+
+					  <h4> <span id="questao-label" class="name"><g:message code="respostaAlunoTurma.questao.label" default="Questao" /></span>
 					
-						<span class="value" aria-labelledby="questao-label"><g:link controller="questao" action="show" id="${respostaAlunoTurmaInstance?.questao?.id}">${respostaAlunoTurmaInstance?.questao?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="questao-label"><g:fieldValue bean="${respostaAlunoTurmaInstance}" field="questao"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${respostaAlunoTurmaInstance?.turma}">
-				<li class="prop">
-					<span id="turma-label" class="name"><g:message code="respostaAlunoTurma.turma.label" default="Turma" /></span>
+
+					  <h4> <span id="turma-label" class="name"><g:message code="respostaAlunoTurma.turma.label" default="Turma" /></span>
 					
-						<span class="value" aria-labelledby="turma-label"><g:link controller="turma" action="show" id="${respostaAlunoTurmaInstance?.turma?.id}">${respostaAlunoTurmaInstance?.turma?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="turma-label"><g:fieldValue bean="${respostaAlunoTurmaInstance}" field="turma"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${respostaAlunoTurmaInstance?.valorResposta}">
-				<li class="prop">
-					<span id="valorResposta-label" class="name"><g:message code="respostaAlunoTurma.valorResposta.label" default="Valor Resposta" /></span>
+
+					  <h4> <span id="valorResposta-label" class="name"><g:message code="respostaAlunoTurma.valorResposta.label" default="Valor Resposta" /></span>
 					
-						<span class="value" aria-labelledby="valorResposta-label"><g:link controller="valorResposta" action="show" id="${respostaAlunoTurmaInstance?.valorResposta?.id}">${respostaAlunoTurmaInstance?.valorResposta?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
+						<span class="value" aria-labelledby="valorResposta-label"><g:fieldValue bean="${respostaAlunoTurmaInstance}" field="valorResposta"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
+				</div>
+				
+			</div>
 			
-			</ol>
+			
+			
+			
 			<g:form url="[resource:respostaAlunoTurmaInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${respostaAlunoTurmaInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-default btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn btn-default btn-lg" action="edit" resource="${respostaAlunoTurmaInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="btn btn-danger btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

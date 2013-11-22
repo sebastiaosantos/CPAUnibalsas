@@ -14,35 +14,43 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<th><g:message code="resposta.avaliacao.label" default="Avaliacao" /></th>
-					
-						<th><g:message code="resposta.questao.label" default="Questao" /></th>
-					
-						<th><g:message code="resposta.valorResposta.label" default="Valor Resposta" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${respostaInstanceList}" status="i" var="respostaInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${respostaInstance.id}">${fieldValue(bean: respostaInstance, field: "avaliacao")}</g:link></td>
-					
-						<td>${fieldValue(bean: respostaInstance, field: "questao")}</td>
-					
-						<td>${fieldValue(bean: respostaInstance, field: "valorResposta")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-resposta" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+				<th><g:message code="resposta.avaliacao.label" default="Avaliacao" /></th>
+			
+				<th><g:message code="resposta.questao.label" default="Questao" /></th>
+			
+				<th><g:message code="resposta.valorResposta.label" default="Valor Resposta" /></th>
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${respostaInstanceList}" status="i" var="respostaInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+				<td><g:link action="show" id="${respostaInstance.id}">${fieldValue(bean: respostaInstance, field: "avaliacao")}</g:link></td>
+			
+				<td>${fieldValue(bean: respostaInstance, field: "questao")}</td>
+			
+				<td>${fieldValue(bean: respostaInstance, field: "valorResposta")}</td>
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${respostaInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

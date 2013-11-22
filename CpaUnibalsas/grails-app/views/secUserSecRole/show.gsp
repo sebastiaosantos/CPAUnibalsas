@@ -14,31 +14,44 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="table secUserSecRole">
 			
+				
+			<div class="row">
+				<div class="col-xs-6 col-md-6">
+
 				<g:if test="${secUserSecRoleInstance?.secRole}">
-				<li class="prop">
-					<span id="secRole-label" class="name"><g:message code="secUserSecRole.secRole.label" default="Sec Role" /></span>
+
+					  <h4> <span id="secRole-label" class="name"><g:message code="secUserSecRole.secRole.label" default="Sec Role" /></span>
 					
-						<span class="value" aria-labelledby="secRole-label"><g:link controller="secRole" action="show" id="${secUserSecRoleInstance?.secRole?.id}">${secUserSecRoleInstance?.secRole?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="secRole-label"><g:fieldValue bean="${secUserSecRoleInstance}" field="secRole"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${secUserSecRoleInstance?.secUser}">
-				<li class="prop">
-					<span id="secUser-label" class="name"><g:message code="secUserSecRole.secUser.label" default="Sec User" /></span>
+
+					  <h4> <span id="secUser-label" class="name"><g:message code="secUserSecRole.secUser.label" default="Sec User" /></span>
 					
-						<span class="value" aria-labelledby="secUser-label"><g:link controller="secUser" action="show" id="${secUserSecRoleInstance?.secUser?.id}">${secUserSecRoleInstance?.secUser?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
+						<span class="value" aria-labelledby="secUser-label"><g:fieldValue bean="${secUserSecRoleInstance}" field="secUser"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
+				</div>
+				
+			</div>
 			
-			</ol>
+			
+			
+			
 			<g:form url="[resource:secUserSecRoleInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${secUserSecRoleInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-default btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn btn-default btn-lg" action="edit" resource="${secUserSecRoleInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="btn btn-danger btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

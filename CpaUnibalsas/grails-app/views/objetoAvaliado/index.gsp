@@ -14,27 +14,35 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="nome" title="${message(code: 'objetoAvaliado.nome.label', default: 'Nome')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${objetoAvaliadoInstanceList}" status="i" var="objetoAvaliadoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${objetoAvaliadoInstance.id}">${fieldValue(bean: objetoAvaliadoInstance, field: "nome")}</g:link></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-objetoAvaliado" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+				<g:sortableColumn property="nome" title="${message(code: 'objetoAvaliado.nome.label', default: 'Nome')}" />
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${objetoAvaliadoInstanceList}" status="i" var="objetoAvaliadoInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+				<td><g:link action="show" id="${objetoAvaliadoInstance.id}">${fieldValue(bean: objetoAvaliadoInstance, field: "nome")}</g:link></td>
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${objetoAvaliadoInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

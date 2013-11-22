@@ -14,6 +14,12 @@ class ObjetoAvaliadoController {
         params.max = Math.min(max ?: 10, 100)
         respond ObjetoAvaliado.list(params), model:[objetoAvaliadoInstanceCount: ObjetoAvaliado.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond ObjetoAvaliado.list(params), model:[objetoAvaliadoInstanceCount: ObjetoAvaliado.count()]
+	}
+	
 
     def show(ObjetoAvaliado objetoAvaliadoInstance) {
         respond objetoAvaliadoInstance

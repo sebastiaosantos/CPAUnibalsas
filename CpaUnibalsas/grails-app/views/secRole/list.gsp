@@ -11,13 +11,17 @@
 		
 <section id="list-secRole" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 				<g:sortableColumn property="authority" title="${message(code: 'secRole.authority.label', default: 'Authority')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${secRoleInstanceList}" status="i" var="secRoleInstance">
@@ -26,11 +30,12 @@
 				<td><g:link action="show" id="${secRoleInstance.id}">${fieldValue(bean: secRoleInstance, field: "authority")}</g:link></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${secRoleInstanceTotal}" />
+		<bs:paginate total="${secRoleInstanceCount}" />
 	</div>
 </section>
 

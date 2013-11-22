@@ -14,6 +14,12 @@ class RespostaAlunoTurmaController {
         params.max = Math.min(max ?: 10, 100)
         respond RespostaAlunoTurma.list(params), model:[respostaAlunoTurmaInstanceCount: RespostaAlunoTurma.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond RespostaAlunoTurma.list(params), model:[respostaAlunoTurmaInstanceCount: RespostaAlunoTurma.count()]
+	}
+	
 
     def show(RespostaAlunoTurma respostaAlunoTurmaInstance) {
         respond respostaAlunoTurmaInstance

@@ -11,13 +11,17 @@
 		
 <section id="list-avaliador" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 				<g:sortableColumn property="nome" title="${message(code: 'avaliador.nome.label', default: 'Nome')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${avaliadorInstanceList}" status="i" var="avaliadorInstance">
@@ -26,11 +30,12 @@
 				<td><g:link action="show" id="${avaliadorInstance.id}">${fieldValue(bean: avaliadorInstance, field: "nome")}</g:link></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${avaliadorInstanceTotal}" />
+		<bs:paginate total="${avaliadorInstanceCount}" />
 	</div>
 </section>
 

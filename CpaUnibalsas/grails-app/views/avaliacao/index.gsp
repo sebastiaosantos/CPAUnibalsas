@@ -14,31 +14,39 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<th><g:message code="avaliacao.cpa.label" default="Cpa" /></th>
-					
-						<g:sortableColumn property="tempo" title="${message(code: 'avaliacao.tempo.label', default: 'Tempo')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${avaliacaoInstanceList}" status="i" var="avaliacaoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${avaliacaoInstance.id}">${fieldValue(bean: avaliacaoInstance, field: "cpa")}</g:link></td>
-					
-						<td>${fieldValue(bean: avaliacaoInstance, field: "tempo")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-avaliacao" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+				<th><g:message code="avaliacao.cpa.label" default="Cpa" /></th>
+			
+				<g:sortableColumn property="tempo" title="${message(code: 'avaliacao.tempo.label', default: 'Tempo')}" />
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${avaliacaoInstanceList}" status="i" var="avaliacaoInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+				<td><g:link action="show" id="${avaliacaoInstance.id}">${fieldValue(bean: avaliacaoInstance, field: "cpa")}</g:link></td>
+			
+				<td>${fieldValue(bean: avaliacaoInstance, field: "tempo")}</td>
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${avaliacaoInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

@@ -14,6 +14,12 @@ class SecRoleController {
         params.max = Math.min(max ?: 10, 100)
         respond SecRole.list(params), model:[secRoleInstanceCount: SecRole.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond SecRole.list(params), model:[secRoleInstanceCount: SecRole.count()]
+	}
+	
 
     def show(SecRole secRoleInstance) {
         respond secRoleInstance

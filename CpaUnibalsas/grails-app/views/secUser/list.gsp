@@ -11,7 +11,7 @@
 		
 <section id="list-secUser" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -28,6 +28,10 @@
 				<g:sortableColumn property="passwordExpired" title="${message(code: 'secUser.passwordExpired.label', default: 'Password Expired')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${secUserInstanceList}" status="i" var="secUserInstance">
@@ -46,11 +50,12 @@
 				<td><g:formatBoolean boolean="${secUserInstance.passwordExpired}" /></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${secUserInstanceTotal}" />
+		<bs:paginate total="${secUserInstanceCount}" />
 	</div>
 </section>
 

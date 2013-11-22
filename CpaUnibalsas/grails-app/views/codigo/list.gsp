@@ -11,7 +11,7 @@
 		
 <section id="list-codigo" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -22,6 +22,10 @@
 				<g:sortableColumn property="usado" title="${message(code: 'codigo.usado.label', default: 'Usado')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${codigoInstanceList}" status="i" var="codigoInstance">
@@ -34,11 +38,12 @@
 				<td><g:formatBoolean boolean="${codigoInstance.usado}" /></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${codigoInstanceTotal}" />
+		<bs:paginate total="${codigoInstanceCount}" />
 	</div>
 </section>
 

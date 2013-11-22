@@ -7,7 +7,7 @@ class CPA implements Serializable {
 			//dataEnceramento(nullable:false)
 			descricao(nullable:false)
 			semestre(range:1..2,nullable:false)
-			dataDeCriacao(nullable:false)
+		//	dataDeCriacao(nullable:false)
 		}
 		
 		static reportable = [:]

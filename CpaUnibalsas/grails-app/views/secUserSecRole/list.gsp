@@ -11,7 +11,7 @@
 		
 <section id="list-secUserSecRole" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -20,6 +20,10 @@
 				<th><g:message code="secUserSecRole.secUser.label" default="Sec User" /></th>
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${secUserSecRoleInstanceList}" status="i" var="secUserSecRoleInstance">
@@ -30,11 +34,12 @@
 				<td>${fieldValue(bean: secUserSecRoleInstance, field: "secUser")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${secUserSecRoleInstanceTotal}" />
+		<bs:paginate total="${secUserSecRoleInstanceCount}" />
 	</div>
 </section>
 

@@ -14,31 +14,39 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="descricao" title="${message(code: 'blocoDeQuestoes.descricao.label', default: 'Descricao')}" />
-					
-						<th><g:message code="blocoDeQuestoes.objetoAvaliado.label" default="Objeto Avaliado" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${blocoDeQuestoesInstanceList}" status="i" var="blocoDeQuestoesInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${blocoDeQuestoesInstance.id}">${fieldValue(bean: blocoDeQuestoesInstance, field: "descricao")}</g:link></td>
-					
-						<td>${fieldValue(bean: blocoDeQuestoesInstance, field: "objetoAvaliado")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-blocoDeQuestoes" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+				<g:sortableColumn property="descricao" title="${message(code: 'blocoDeQuestoes.descricao.label', default: 'Descricao')}" />
+			
+				<th><g:message code="blocoDeQuestoes.objetoAvaliado.label" default="Objeto Avaliado" /></th>
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${blocoDeQuestoesInstanceList}" status="i" var="blocoDeQuestoesInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+				<td><g:link action="show" id="${blocoDeQuestoesInstance.id}">${fieldValue(bean: blocoDeQuestoesInstance, field: "descricao")}</g:link></td>
+			
+				<td>${fieldValue(bean: blocoDeQuestoesInstance, field: "objetoAvaliado")}</td>
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${blocoDeQuestoesInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

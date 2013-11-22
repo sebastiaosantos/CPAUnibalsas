@@ -11,22 +11,27 @@
 		
 <section id="list-valorRespostaInteiro" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${valorRespostaInteiroInstanceList}" status="i" var="valorRespostaInteiroInstance">
 			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${valorRespostaInteiroInstanceTotal}" />
+		<bs:paginate total="${valorRespostaInteiroInstanceCount}" />
 	</div>
 </section>
 

@@ -14,60 +14,77 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="table avaliacaoAluno">
 			
+				
+			<div class="row">
+				<div class="col-xs-6 col-md-6">
+
 				<g:if test="${avaliacaoAlunoInstance?.cpa}">
-				<li class="prop">
-					<span id="cpa-label" class="name"><g:message code="avaliacaoAluno.cpa.label" default="Cpa" /></span>
+
+					  <h4> <span id="cpa-label" class="name"><g:message code="avaliacaoAluno.cpa.label" default="Cpa" /></span>
 					
-						<span class="value" aria-labelledby="cpa-label"><g:link controller="CPA" action="show" id="${avaliacaoAlunoInstance?.cpa?.id}">${avaliacaoAlunoInstance?.cpa?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="cpa-label"><g:fieldValue bean="${avaliacaoAlunoInstance}" field="cpa"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${avaliacaoAlunoInstance?.curso}">
-				<li class="prop">
-					<span id="curso-label" class="name"><g:message code="avaliacaoAluno.curso.label" default="Curso" /></span>
+
+					  <h4> <span id="curso-label" class="name"><g:message code="avaliacaoAluno.curso.label" default="Curso" /></span>
 					
-						<span class="value" aria-labelledby="curso-label"><g:link controller="curso" action="show" id="${avaliacaoAlunoInstance?.curso?.id}">${avaliacaoAlunoInstance?.curso?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="curso-label"><g:fieldValue bean="${avaliacaoAlunoInstance}" field="curso"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${avaliacaoAlunoInstance?.periodo}">
-				<li class="prop">
-					<span id="periodo-label" class="name"><g:message code="avaliacaoAluno.periodo.label" default="Periodo" /></span>
+
+					  <h4> <span id="periodo-label" class="name"><g:message code="avaliacaoAluno.periodo.label" default="Periodo" /></span>
 					
 						<span class="value" aria-labelledby="periodo-label"><g:fieldValue bean="${avaliacaoAlunoInstance}" field="periodo"/></span>
-					
-				</li>
-				</g:if>
-			
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${avaliacaoAlunoInstance?.respostas}">
-				<li class="prop">
-					<span id="respostas-label" class="name"><g:message code="avaliacaoAluno.respostas.label" default="Respostas" /></span>
+
+					  <h4> <span id="respostas-label" class="name"><g:message code="avaliacaoAluno.respostas.label" default="Respostas" /></span>
 					
-						<g:each in="${avaliacaoAlunoInstance.respostas}" var="r">
-						<span class="value"respostas-label"><g:link controller="resposta" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="respostas-label"><g:fieldValue bean="${avaliacaoAlunoInstance}" field="respostas"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${avaliacaoAlunoInstance?.tempo}">
-				<li class="prop">
-					<span id="tempo-label" class="name"><g:message code="avaliacaoAluno.tempo.label" default="Tempo" /></span>
+
+					  <h4> <span id="tempo-label" class="name"><g:message code="avaliacaoAluno.tempo.label" default="Tempo" /></span>
 					
 						<span class="value" aria-labelledby="tempo-label"><g:fieldValue bean="${avaliacaoAlunoInstance}" field="tempo"/></span>
-					
-				</li>
-				</g:if>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
+				</div>
+				
+			</div>
 			
-			</ol>
+			
+			
+			
 			<g:form url="[resource:avaliacaoAlunoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${avaliacaoAlunoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-default btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn btn-default btn-lg" action="edit" resource="${avaliacaoAlunoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="btn btn-danger btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

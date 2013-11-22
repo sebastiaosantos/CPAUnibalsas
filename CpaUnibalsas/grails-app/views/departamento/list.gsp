@@ -11,13 +11,17 @@
 		
 <section id="list-departamento" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 				<g:sortableColumn property="descricao" title="${message(code: 'departamento.descricao.label', default: 'Descricao')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${departamentoInstanceList}" status="i" var="departamentoInstance">
@@ -26,11 +30,12 @@
 				<td><g:link action="show" id="${departamentoInstance.id}">${fieldValue(bean: departamentoInstance, field: "descricao")}</g:link></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${departamentoInstanceTotal}" />
+		<bs:paginate total="${departamentoInstanceCount}" />
 	</div>
 </section>
 

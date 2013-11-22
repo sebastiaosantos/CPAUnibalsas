@@ -14,6 +14,12 @@ class AvaliacaoComunidadeExternaController {
         params.max = Math.min(max ?: 10, 100)
         respond AvaliacaoComunidadeExterna.list(params), model:[avaliacaoComunidadeExternaInstanceCount: AvaliacaoComunidadeExterna.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond AvaliacaoComunidadeExterna.list(params), model:[avaliacaoComunidadeExternaInstanceCount: AvaliacaoComunidadeExterna.count()]
+	}
+	
 
     def show(AvaliacaoComunidadeExterna avaliacaoComunidadeExternaInstance) {
         respond avaliacaoComunidadeExternaInstance

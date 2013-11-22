@@ -11,13 +11,17 @@
 		
 <section id="list-professor" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 				<g:sortableColumn property="nome" title="${message(code: 'professor.nome.label', default: 'Nome')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${professorInstanceList}" status="i" var="professorInstance">
@@ -26,11 +30,12 @@
 				<td><g:link action="show" id="${professorInstance.id}">${fieldValue(bean: professorInstance, field: "nome")}</g:link></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${professorInstanceTotal}" />
+		<bs:paginate total="${professorInstanceCount}" />
 	</div>
 </section>
 

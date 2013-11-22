@@ -14,80 +14,99 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="table CPA">
 			
+				
+			<div class="row">
+				<div class="col-xs-6 col-md-6">
+
 				<g:if test="${CPAInstance?.descricao}">
-				<li class="prop">
-					<span id="descricao-label" class="name"><g:message code="CPA.descricao.label" default="Descricao" /></span>
+
+					  <h4> <span id="descricao-label" class="name"><g:message code="CPA.descricao.label" default="Descricao" /></span>
 					
 						<span class="value" aria-labelledby="descricao-label"><g:fieldValue bean="${CPAInstance}" field="descricao"/></span>
-					
-				</li>
-				</g:if>
-			
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${CPAInstance?.semestre}">
-				<li class="prop">
-					<span id="semestre-label" class="name"><g:message code="CPA.semestre.label" default="Semestre" /></span>
+
+					  <h4> <span id="semestre-label" class="name"><g:message code="CPA.semestre.label" default="Semestre" /></span>
 					
 						<span class="value" aria-labelledby="semestre-label"><g:fieldValue bean="${CPAInstance}" field="semestre"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${CPAInstance?.dataDeCriacao}">
-				<li class="prop">
-					<span id="dataDeCriacao-label" class="name"><g:message code="CPA.dataDeCriacao.label" default="Data De Criacao" /></span>
-					
-						<span class="value" aria-labelledby="dataDeCriacao-label"><g:formatDate date="${CPAInstance?.dataDeCriacao}" /></span>
-					
-				</li>
-				</g:if>
-			
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${CPAInstance?.ativa}">
-				<li class="prop">
-					<span id="ativa-label" class="name"><g:message code="CPA.ativa.label" default="Ativa" /></span>
+
+					  <h4> <span id="ativa-label" class="name"><g:message code="CPA.ativa.label" default="Ativa" /></span>
 					
-						<span class="value" aria-labelledby="ativa-label"><g:formatBoolean boolean="${CPAInstance?.ativa}" /></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="ativa-label"><g:fieldValue bean="${CPAInstance}" field="ativa"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${CPAInstance?.blocosDeQuestoes}">
-				<li class="prop">
-					<span id="blocosDeQuestoes-label" class="name"><g:message code="CPA.blocosDeQuestoes.label" default="Blocos De Questoes" /></span>
+
+					  <h4> <span id="blocosDeQuestoes-label" class="name"><g:message code="CPA.blocosDeQuestoes.label" default="Blocos De Questoes" /></span>
 					
-						<g:each in="${CPAInstance.blocosDeQuestoes}" var="b">
-						<span class="value"blocosDeQuestoes-label"><g:link controller="blocoDeQuestoes" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="value" aria-labelledby="blocosDeQuestoes-label"><g:fieldValue bean="${CPAInstance}" field="blocosDeQuestoes"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
+				<g:if test="${CPAInstance?.dataDeCriacao}">
+
+					  <h4> <span id="dataDeCriacao-label" class="name"><g:message code="CPA.dataDeCriacao.label" default="Data De Criacao" /></span>
 					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="dataDeCriacao-label"><g:fieldValue bean="${CPAInstance}" field="dataDeCriacao"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${CPAInstance?.tipoAvaliadorAtivo}">
-				<li class="prop">
-					<span id="tipoAvaliadorAtivo-label" class="name"><g:message code="CPA.tipoAvaliadorAtivo.label" default="Tipo Avaliador Ativo" /></span>
+
+					  <h4> <span id="tipoAvaliadorAtivo-label" class="name"><g:message code="CPA.tipoAvaliadorAtivo.label" default="Tipo Avaliador Ativo" /></span>
 					
-						<span class="value"tipoAvaliadorAtivo-label"><g:fieldValue bean="${CPAInstance}" field="tipoAvaliadorAtivo"/></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="tipoAvaliadorAtivo-label"><g:fieldValue bean="${CPAInstance}" field="tipoAvaliadorAtivo"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${CPAInstance?.turmas}">
-				<li class="prop">
-					<span id="turmas-label" class="name"><g:message code="CPA.turmas.label" default="Turmas" /></span>
+
+					  <h4> <span id="turmas-label" class="name"><g:message code="CPA.turmas.label" default="Turmas" /></span>
 					
-						<g:each in="${CPAInstance.turmas}" var="t">
-						<span class="value"turmas-label"><g:link controller="turma" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
+						<span class="value" aria-labelledby="turmas-label"><g:fieldValue bean="${CPAInstance}" field="turmas"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
+				</div>
+				
+			</div>
 			
-			</ol>
+			
+			
+			
 			<g:form url="[resource:CPAInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${CPAInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-default btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn btn-default btn-lg" action="edit" resource="${CPAInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="btn btn-danger btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

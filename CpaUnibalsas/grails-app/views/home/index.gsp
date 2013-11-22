@@ -8,7 +8,6 @@
 		args="[meta(name:'app.name')]" /></title>
 
 
-<r:require modules="questao" />
 
 
 

@@ -7,5 +7,12 @@ class Professor implements Serializable{
 		static reportable = [:]
 		
 		String nome
+		
+		@Override
+		public String toString() {
+		// TODO Auto-generated method stub
+		return(nome);
+		}
 	}
+
 	

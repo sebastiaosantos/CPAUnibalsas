@@ -14,6 +14,12 @@ class BlocoDeQuestoesController {
         params.max = Math.min(max ?: 10, 100)
         respond BlocoDeQuestoes.list(params), model:[blocoDeQuestoesInstanceCount: BlocoDeQuestoes.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond BlocoDeQuestoes.list(params), model:[blocoDeQuestoesInstanceCount: BlocoDeQuestoes.count()]
+	}
+	
 
     def show(BlocoDeQuestoes blocoDeQuestoesInstance) {
         respond blocoDeQuestoesInstance

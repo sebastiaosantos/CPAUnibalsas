@@ -23,3 +23,4 @@ This is the standard dialog that initiates the delete action.
 		
 	</div>
 </div>
+

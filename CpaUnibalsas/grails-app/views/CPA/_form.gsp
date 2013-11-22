@@ -18,14 +18,6 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: CPAInstance, field: 'dataDeCriacao', 'error')} required">
-				<label for="dataDeCriacao" class="control-label"><g:message code="CPA.dataDeCriacao.label" default="Data De Criacao" /><span class="required-indicator">*</span></label>
-				<div class="controls">
-					<bs:datePicker name="dataDeCriacao" precision="day"  value="${CPAInstance?.dataDeCriacao}"  />
-					<span class="help-inline">${hasErrors(bean: CPAInstance, field: 'dataDeCriacao', 'error')}</span>
-				</div>
-			</div>
-
 			<div class="control-group fieldcontain ${hasErrors(bean: CPAInstance, field: 'ativa', 'error')} ">
 				<label for="ativa" class="control-label"><g:message code="CPA.ativa.label" default="Ativa" /></label>
 				<div class="controls">
@@ -39,6 +31,14 @@
 				<div class="controls">
 					<g:select name="blocosDeQuestoes" from="${br.edu.unibalsas.siscpa.BlocoDeQuestoes.list()}" multiple="multiple" optionKey="id" size="5" value="${CPAInstance?.blocosDeQuestoes*.id}" class="many-to-many"/>
 					<span class="help-inline">${hasErrors(bean: CPAInstance, field: 'blocosDeQuestoes', 'error')}</span>
+				</div>
+			</div>
+
+			<div class="control-group fieldcontain ${hasErrors(bean: CPAInstance, field: 'dataDeCriacao', 'error')} required">
+				<label for="dataDeCriacao" class="control-label"><g:message code="CPA.dataDeCriacao.label" default="Data De Criacao" /><span class="required-indicator">*</span></label>
+				<div class="controls">
+					<bs:datePicker name="dataDeCriacao" precision="day"  value="${CPAInstance?.dataDeCriacao}"  />
+					<span class="help-inline">${hasErrors(bean: CPAInstance, field: 'dataDeCriacao', 'error')}</span>
 				</div>
 			</div>
 

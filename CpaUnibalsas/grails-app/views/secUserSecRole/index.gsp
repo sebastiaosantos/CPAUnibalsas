@@ -14,31 +14,39 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<th><g:message code="secUserSecRole.secRole.label" default="Sec Role" /></th>
-					
-						<th><g:message code="secUserSecRole.secUser.label" default="Sec User" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${secUserSecRoleInstanceList}" status="i" var="secUserSecRoleInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${secUserSecRoleInstance.id}">${fieldValue(bean: secUserSecRoleInstance, field: "secRole")}</g:link></td>
-					
-						<td>${fieldValue(bean: secUserSecRoleInstance, field: "secUser")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-secUserSecRole" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+				<th><g:message code="secUserSecRole.secRole.label" default="Sec Role" /></th>
+			
+				<th><g:message code="secUserSecRole.secUser.label" default="Sec User" /></th>
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${secUserSecRoleInstanceList}" status="i" var="secUserSecRoleInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+				<td><g:link action="show" id="${secUserSecRoleInstance.id}">${fieldValue(bean: secUserSecRoleInstance, field: "secRole")}</g:link></td>
+			
+				<td>${fieldValue(bean: secUserSecRoleInstance, field: "secUser")}</td>
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${secUserSecRoleInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

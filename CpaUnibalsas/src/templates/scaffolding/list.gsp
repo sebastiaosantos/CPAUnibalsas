@@ -11,7 +11,7 @@
 		
 <section id="list-${domainClass.propertyName}" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
@@ -26,6 +26,10 @@
 				<g:sortableColumn property="${p.name}" title="\${message(code: '${domainClass.propertyName}.${p.name}.label', default: '${p.naturalName}')}" />
 			<%  }   }   } %>
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
@@ -42,6 +46,7 @@
 				<td>\${fieldValue(bean: ${propertyName}, field: "${p.name}")}</td>
 			<%  }   }   } %>
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>

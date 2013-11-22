@@ -11,7 +11,7 @@
 		
 <section id="list-curso" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -20,6 +20,10 @@
 				<g:sortableColumn property="nome" title="${message(code: 'curso.nome.label', default: 'Nome')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${cursoInstanceList}" status="i" var="cursoInstance">
@@ -30,11 +34,12 @@
 				<td>${fieldValue(bean: cursoInstance, field: "nome")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${cursoInstanceTotal}" />
+		<bs:paginate total="${cursoInstanceCount}" />
 	</div>
 </section>
 

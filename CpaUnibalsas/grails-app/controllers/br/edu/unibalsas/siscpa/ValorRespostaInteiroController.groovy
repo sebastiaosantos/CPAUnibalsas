@@ -14,6 +14,12 @@ class ValorRespostaInteiroController {
         params.max = Math.min(max ?: 10, 100)
         respond ValorRespostaInteiro.list(params), model:[valorRespostaInteiroInstanceCount: ValorRespostaInteiro.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond ValorRespostaInteiro.list(params), model:[valorRespostaInteiroInstanceCount: ValorRespostaInteiro.count()]
+	}
+	
 
     def show(ValorRespostaInteiro valorRespostaInteiroInstance) {
         respond valorRespostaInteiroInstance

@@ -14,67 +14,88 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="table secUser">
 			
+				
+			<div class="row">
+				<div class="col-xs-6 col-md-6">
+
 				<g:if test="${secUserInstance?.username}">
-				<li class="prop">
-					<span id="username-label" class="name"><g:message code="secUser.username.label" default="Username" /></span>
+
+					  <h4> <span id="username-label" class="name"><g:message code="secUser.username.label" default="Username" /></span>
 					
 						<span class="value" aria-labelledby="username-label"><g:fieldValue bean="${secUserInstance}" field="username"/></span>
-					
-				</li>
-				</g:if>
-			
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${secUserInstance?.password}">
-				<li class="prop">
-					<span id="password-label" class="name"><g:message code="secUser.password.label" default="Password" /></span>
+
+					  <h4> <span id="password-label" class="name"><g:message code="secUser.password.label" default="Password" /></span>
 					
 						<span class="value" aria-labelledby="password-label"><g:fieldValue bean="${secUserInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
-			
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${secUserInstance?.accountExpired}">
-				<li class="prop">
-					<span id="accountExpired-label" class="name"><g:message code="secUser.accountExpired.label" default="Account Expired" /></span>
+
+					  <h4> <span id="accountExpired-label" class="name"><g:message code="secUser.accountExpired.label" default="Account Expired" /></span>
 					
-						<span class="value" aria-labelledby="accountExpired-label"><g:formatBoolean boolean="${secUserInstance?.accountExpired}" /></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="accountExpired-label"><g:fieldValue bean="${secUserInstance}" field="accountExpired"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${secUserInstance?.accountLocked}">
-				<li class="prop">
-					<span id="accountLocked-label" class="name"><g:message code="secUser.accountLocked.label" default="Account Locked" /></span>
+
+					  <h4> <span id="accountLocked-label" class="name"><g:message code="secUser.accountLocked.label" default="Account Locked" /></span>
 					
-						<span class="value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${secUserInstance?.accountLocked}" /></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="accountLocked-label"><g:fieldValue bean="${secUserInstance}" field="accountLocked"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${secUserInstance?.enabled}">
-				<li class="prop">
-					<span id="enabled-label" class="name"><g:message code="secUser.enabled.label" default="Enabled" /></span>
+
+					  <h4> <span id="enabled-label" class="name"><g:message code="secUser.enabled.label" default="Enabled" /></span>
 					
-						<span class="value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${secUserInstance?.enabled}" /></span>
-					
-				</li>
-				</g:if>
-			
+						<span class="value" aria-labelledby="enabled-label"><g:fieldValue bean="${secUserInstance}" field="enabled"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
 				<g:if test="${secUserInstance?.passwordExpired}">
-				<li class="prop">
-					<span id="passwordExpired-label" class="name"><g:message code="secUser.passwordExpired.label" default="Password Expired" /></span>
+
+					  <h4> <span id="passwordExpired-label" class="name"><g:message code="secUser.passwordExpired.label" default="Password Expired" /></span>
 					
-						<span class="value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${secUserInstance?.passwordExpired}" /></span>
-					
-				</li>
-				</g:if>
+						<span class="value" aria-labelledby="passwordExpired-label"><g:fieldValue bean="${secUserInstance}" field="passwordExpired"/></span>
+						
+						<br/><br/>
+				
+						  </h4>
+						  </g:if>
+						  
+				</div>
+				
+			</div>
 			
-			</ol>
+			
+			
+			
 			<g:form url="[resource:secUserInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${secUserInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-default btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn btn-default btn-lg" action="edit" resource="${secUserInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="btn btn-danger btn-lg" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

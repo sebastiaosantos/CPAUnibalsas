@@ -14,23 +14,31 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${valorRespostaInteiroInstanceList}" status="i" var="valorRespostaInteiroInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+		<section id="list-valorRespostaInteiro" class="first">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			
+			</tr>
+			
+			
+			
+			
+		</thead>
+		<tbody>
+		<g:each in="${valorRespostaInteiroInstanceList}" status="i" var="valorRespostaInteiroInstance">
+			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+			
+			</tr>
+						
+		</g:each>
+		</tbody>
+	</table>
 			<div class="pagination">
 				<g:paginate total="${valorRespostaInteiroInstanceCount ?: 0}" />
 			</div>
+			</section>
 		</div>
 	</body>
 </html>

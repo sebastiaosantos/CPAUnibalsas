@@ -7,6 +7,7 @@ class Questao implements Comparable<Questao>, Serializable{
 		descricao(maxSize:3000)
 		questaoPai(nullable:true)
 		respostaChave(nullable:true)
+		
     }
 	
 	def static reportable = [:]

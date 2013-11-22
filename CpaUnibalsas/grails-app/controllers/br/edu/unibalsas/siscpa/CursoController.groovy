@@ -14,6 +14,12 @@ class CursoController {
         params.max = Math.min(max ?: 10, 100)
         respond Curso.list(params), model:[cursoInstanceCount: Curso.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond Curso.list(params), model:[cursoInstanceCount: Curso.count()]
+	}
+	
 
     def show(Curso cursoInstance) {
         respond cursoInstance

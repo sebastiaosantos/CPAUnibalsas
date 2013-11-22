@@ -14,6 +14,12 @@ class RespostaController {
         params.max = Math.min(max ?: 10, 100)
         respond Resposta.list(params), model:[respostaInstanceCount: Resposta.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond Resposta.list(params), model:[respostaInstanceCount: Resposta.count()]
+	}
+	
 
     def show(Resposta respostaInstance) {
         respond respostaInstance

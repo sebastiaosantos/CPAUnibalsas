@@ -12,6 +12,12 @@ class ${className}Controller {
         params.max = Math.min(max ?: 10, 100)
         respond ${className}.list(params), model:[${propertyName}Count: ${className}.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond ${className}.list(params), model:[${propertyName}Count: ${className}.count()]
+	}
+	
 
     def show(${className} ${propertyName}) {
         respond ${propertyName}

@@ -14,6 +14,12 @@ class CPAController {
         params.max = Math.min(max ?: 10, 100)
         respond CPA.list(params), model:[CPAInstanceCount: CPA.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond CPA.list(params), model:[CPAInstanceCount: CPA.count()]
+	}
+	
 
     def show(CPA CPAInstance) {
         respond CPAInstance

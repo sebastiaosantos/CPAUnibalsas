@@ -11,7 +11,7 @@
 		
 <section id="list-respostaAlunoTurma" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -24,6 +24,10 @@
 				<th><g:message code="respostaAlunoTurma.valorResposta.label" default="Valor Resposta" /></th>
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${respostaAlunoTurmaInstanceList}" status="i" var="respostaAlunoTurmaInstance">
@@ -38,11 +42,12 @@
 				<td>${fieldValue(bean: respostaAlunoTurmaInstance, field: "valorResposta")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${respostaAlunoTurmaInstanceTotal}" />
+		<bs:paginate total="${respostaAlunoTurmaInstanceCount}" />
 	</div>
 </section>
 

@@ -11,7 +11,7 @@
 		
 <section id="list-avaliacaoComunidadeExterna" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -20,6 +20,10 @@
 				<g:sortableColumn property="tempo" title="${message(code: 'avaliacaoComunidadeExterna.tempo.label', default: 'Tempo')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${avaliacaoComunidadeExternaInstanceList}" status="i" var="avaliacaoComunidadeExternaInstance">
@@ -30,11 +34,12 @@
 				<td>${fieldValue(bean: avaliacaoComunidadeExternaInstance, field: "tempo")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${avaliacaoComunidadeExternaInstanceTotal}" />
+		<bs:paginate total="${avaliacaoComunidadeExternaInstanceCount}" />
 	</div>
 </section>
 

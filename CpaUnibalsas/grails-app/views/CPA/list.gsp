@@ -11,7 +11,7 @@
 		
 <section id="list-CPA" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
@@ -19,13 +19,17 @@
 			
 				<g:sortableColumn property="semestre" title="${message(code: 'CPA.semestre.label', default: 'Semestre')}" />
 			
-				<g:sortableColumn property="dataDeCriacao" title="${message(code: 'CPA.dataDeCriacao.label', default: 'Data De Criacao')}" />
-			
 				<g:sortableColumn property="ativa" title="${message(code: 'CPA.ativa.label', default: 'Ativa')}" />
+			
+				<g:sortableColumn property="dataDeCriacao" title="${message(code: 'CPA.dataDeCriacao.label', default: 'Data De Criacao')}" />
 			
 				<g:sortableColumn property="tipoAvaliadorAtivo" title="${message(code: 'CPA.tipoAvaliadorAtivo.label', default: 'Tipo Avaliador Ativo')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${CPAInstanceList}" status="i" var="CPAInstance">
@@ -35,13 +39,14 @@
 			
 				<td>${fieldValue(bean: CPAInstance, field: "semestre")}</td>
 			
-				<td><g:formatDate date="${CPAInstance.dataDeCriacao}" /></td>
-			
 				<td><g:formatBoolean boolean="${CPAInstance.ativa}" /></td>
+			
+				<td><g:formatDate date="${CPAInstance.dataDeCriacao}" /></td>
 			
 				<td>${fieldValue(bean: CPAInstance, field: "tipoAvaliadorAtivo")}</td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>

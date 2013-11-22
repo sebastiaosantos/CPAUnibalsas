@@ -11,13 +11,17 @@
 		
 <section id="list-objetoAvaliado" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 				<g:sortableColumn property="nome" title="${message(code: 'objetoAvaliado.nome.label', default: 'Nome')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${objetoAvaliadoInstanceList}" status="i" var="objetoAvaliadoInstance">
@@ -26,11 +30,12 @@
 				<td><g:link action="show" id="${objetoAvaliadoInstance.id}">${fieldValue(bean: objetoAvaliadoInstance, field: "nome")}</g:link></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${objetoAvaliadoInstanceTotal}" />
+		<bs:paginate total="${objetoAvaliadoInstanceCount}" />
 	</div>
 </section>
 

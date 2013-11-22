@@ -11,13 +11,17 @@
 		
 <section id="list-seed" class="first">
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-responsive"">
 		<thead>
 			<tr>
 			
 				<g:sortableColumn property="atual" title="${message(code: 'seed.atual.label', default: 'Atual')}" />
 			
 			</tr>
+			
+			
+			
+			
 		</thead>
 		<tbody>
 		<g:each in="${seedInstanceList}" status="i" var="seedInstance">
@@ -26,11 +30,12 @@
 				<td><g:link action="show" id="${seedInstance.id}">${fieldValue(bean: seedInstance, field: "atual")}</g:link></td>
 			
 			</tr>
+						
 		</g:each>
 		</tbody>
 	</table>
 	<div class="pagination">
-		<bs:paginate total="${seedInstanceTotal}" />
+		<bs:paginate total="${seedInstanceCount}" />
 	</div>
 </section>
 

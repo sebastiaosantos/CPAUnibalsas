@@ -12,5 +12,11 @@ class Curso implements Serializable{
 		String nome
 	
 		String tipo
+		
+		@Override
+		public String toString() {
+		// TODO Auto-generated method stub
+		return(nome);
+		}
 	}
 	

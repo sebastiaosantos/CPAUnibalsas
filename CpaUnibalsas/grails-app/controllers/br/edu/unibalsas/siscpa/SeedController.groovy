@@ -14,6 +14,12 @@ class SeedController {
         params.max = Math.min(max ?: 10, 100)
         respond Seed.list(params), model:[seedInstanceCount: Seed.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond Seed.list(params), model:[seedInstanceCount: Seed.count()]
+	}
+	
 
     def show(Seed seedInstance) {
         respond seedInstance

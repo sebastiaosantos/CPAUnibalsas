@@ -14,6 +14,12 @@ class AvaliacaoAlunoPosController {
         params.max = Math.min(max ?: 10, 100)
         respond AvaliacaoAlunoPos.list(params), model:[avaliacaoAlunoPosInstanceCount: AvaliacaoAlunoPos.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond AvaliacaoAlunoPos.list(params), model:[avaliacaoAlunoPosInstanceCount: AvaliacaoAlunoPos.count()]
+	}
+	
 
     def show(AvaliacaoAlunoPos avaliacaoAlunoPosInstance) {
         respond avaliacaoAlunoPosInstance

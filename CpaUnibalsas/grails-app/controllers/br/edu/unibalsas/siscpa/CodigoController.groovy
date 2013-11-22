@@ -14,6 +14,12 @@ class CodigoController {
         params.max = Math.min(max ?: 10, 100)
         respond Codigo.list(params), model:[codigoInstanceCount: Codigo.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond Codigo.list(params), model:[codigoInstanceCount: Codigo.count()]
+	}
+	
 
     def show(Codigo codigoInstance) {
         respond codigoInstance

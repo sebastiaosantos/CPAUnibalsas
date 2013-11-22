@@ -14,6 +14,12 @@ class TurmaController {
         params.max = Math.min(max ?: 10, 100)
         respond Turma.list(params), model:[turmaInstanceCount: Turma.count()]
     }
+	
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		  respond Turma.list(params), model:[turmaInstanceCount: Turma.count()]
+	}
+	
 
     def show(Turma turmaInstance) {
         respond turmaInstance
